@@ -1,16 +1,38 @@
-# React + Vite
+# Site Inspection Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modular, interactive React web application built from scratch to track safety, maintenance, and facility inspection reports in real-time. Designed as a clean frontend project to master core React principles including component composition, state lifting, controlled form inputs, and modal management.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## ✨ Features
 
-## React Compiler
+- **Dynamic Inspection List:** Renders dynamic inspection cards with color-coded status badges (*Passed*, *Failed*, *Pending*) and priority indicators.
+- **Detailed View Modal:** Click any inspection card to open a full-screen overlay modal displaying complete inspection notes, inspector details, and location metadata.
+- **Interactive Form Modal:** A popup form allowing users to submit new inspection entries with automatic unique timestamp-based ID generation (`Date.now()`).
+- **Responsive & Accessible Design:** Built with clean modern CSS featuring automatic light and dark mode styling based on system preferences.
+- **Modular Architecture:** Clean separation of concerns with isolated components, modular styling, and local state management.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 📂 Project Directory Structure
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```text
+site-inspection-app/
+├── public/                # Static assets and icons
+├── src/
+│   ├── components/
+│   │   ├── Footer.jsx                 # Page footer framing
+│   │   ├── Header.jsx                 # Application header & trigger action
+│   │   ├── InspectionCard.jsx         # Individual summary card component
+│   │   ├── InspectionDetailModal.jsx  # Full details pop-up overlay
+│   │   ├── InspectionForm.jsx         # New inspection input form modal
+│   │   └── InspectionList.jsx         # Grid container mapping inspection items
+│   ├── data/
+│   │   └── initialInspections.js      # Initial sample data payload
+│   ├── App.css                        # Component-specific styles (if any)
+│   ├── App.jsx                        # Main parent component & global state host
+│   ├── index.css                      # Global design tokens and layout rules
+│   └── main.jsx                       # React DOM entry point
+├── index.html
+├── package.json
+└── vite.config.js
